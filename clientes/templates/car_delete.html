@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Deletar carros !!!{% endblock %}
+
+{% block main %}
+<h1>Têm certeza que deseja deletar o carro selcionado ? </h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+
+    <button type="submit">Deletar</button>
+</form>
+{% endblock %}

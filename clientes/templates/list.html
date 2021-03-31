@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h2>Vendas de carros</h2>
+{% endblock %}
+
+{% block content %}
+<h2>Listagem de Carros</h2>
+<ul>
+    {% for car in cars %}
+
+    <li>Marca: <a href="{% url 'car_update' car.id %}">{{ car.car_name }}</a></li>
+    <li>Modelo: {{ car.car_model }}</li>
+    <li>Cor: {{ car.car_color }}</li>
+    <li>Ano: {{ car.car_year }}</li>
+    <li>Valor: {{ car.car_value }}</li>
+    <li>Descrição: {{ car.car_description }}</li>
+    <br>
+
+    {% endfor %}
+</ul>
+
+<a href="{% url 'car_create' %}">
+    <button type="submit">New car</button>
+</a>
+{% endblock %}
