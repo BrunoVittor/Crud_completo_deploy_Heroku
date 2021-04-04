@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+
 {% block title %}
-<h2>Vendas de carros</h2>
+Vendas de carros
 {% endblock %}
 
 {% block content %}
+<a href="{% url 'logout' %}">Logout</a>
 <h2>Listagem de Carros</h2>
 <ul>
     {% for car in cars %}
@@ -16,7 +20,9 @@
     <li>Valor: {{ car.car_value }}</li>
     <li>Descrição: {{ car.car_description }}</li>
     <br>
-
+    <a href="{% url 'car_delete' car.id %}"><button type="submit">Deletar</button></a>
+    <br>
+    <img src="media/cars_photos"/>
     {% endfor %}
 </ul>
 

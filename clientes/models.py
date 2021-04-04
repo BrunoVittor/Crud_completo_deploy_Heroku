@@ -7,6 +7,7 @@ class Cars(models.Model):
     car_year = models.IntegerField()
     car_value = models.DecimalField(max_digits=10, decimal_places=2)
     car_description = models.TextField()
+    car_image = models.ImageField(upload_to='cars_photos', blank=True, null=True)
 
 
     def __str__(self):
