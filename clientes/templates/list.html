@@ -2,13 +2,10 @@
 
 {% load static %}
 
-
-{% block title %}
-Vendas de carros
-{% endblock %}
+{% block title %}Vendas de carros{% endblock %}
 
 {% block content %}
-<a href="{% url 'logout' %}">Logout</a>
+<a href="{% url 'logout' %}"><button type="submit" class="btn btn-warning">Logout</button></a>
 <h2>Listagem de Carros</h2>
 <ul>
     {% for car in cars %}
@@ -19,14 +16,13 @@ Vendas de carros
     <li>Ano: {{ car.car_year }}</li>
     <li>Valor: {{ car.car_value }}</li>
     <li>Descrição: {{ car.car_description }}</li>
-    <br>
-    <a href="{% url 'car_delete' car.id %}"><button type="submit">Deletar</button></a>
-    <br>
-    <img src="media/cars_photos"/>
+    <a href="{% url 'car_delete' car.id %}"><button type="submit" class="btn btn-danger">Deletar</button></a>
+    <br><br>
     {% endfor %}
+    <br>
 </ul>
 
 <a href="{% url 'car_create' %}">
-    <button type="submit">New car</button>
+    <button type="submit" class="btn btn-info">New car</button>
 </a>
 {% endblock %}

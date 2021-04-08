@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['my-project-2021.herokuapp.com']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'clientes',
     'home',
+    'bootstrapform',
 ]
 
 MIDDLEWARE = [
@@ -77,7 +78,6 @@ WSGI_APPLICATION = 'MyProject.wsgi.application'
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
 DATABASES = {'default': config('DATABASE_URL', default=default_dburl, cast=dburl), }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
